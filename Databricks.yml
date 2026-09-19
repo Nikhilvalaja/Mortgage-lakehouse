@@ -1,0 +1,42 @@
+bundle:
+  name: mortgage-lakehouse
+
+include:
+  - resources/*/*.yml
+
+variables:
+  env:
+    default: dev
+  catalog:
+    default: vendor_drop_dev
+  warehouse_id:
+    description: SQL warehouse id
+    default: 517c3db65a4d0506
+
+targets:
+  dev:
+    default: true
+    mode: development
+    workspace:
+      host: https://dbc-5bedeafe-82cc.cloud.databricks.com/browse?o=7474653842361991
+    variables:
+      env: dev
+      catalog: vendor_drop_dev
+
+  test:
+    mode: production
+    workspace:
+      host: https://dbc-5bedeafe-82cc.cloud.databricks.com/browse?o=7474653842361991
+      root_path: /Workspace/Users/valajashekarnikhil12@gmail.com/.bundle/${bundle.name}/test
+    variables:
+      env: test
+      catalog: vendor_drop_test
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-5bedeafe-82cc.cloud.databricks.com/browse?o=7474653842361991
+      root_path: /Workspace/Users/valajashekarnikhil12@gmail.com/.bundle/${bundle.name}/prod
+    variables:
+      env: prod
+      catalog: vendor_drop_prod
