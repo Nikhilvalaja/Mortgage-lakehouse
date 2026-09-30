@@ -1,0 +1,38 @@
+[project]
+name = "mortgage-lakehouse"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Nikhil.V.S.", email = "valajashekarnikhil12@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "databricks-connect>=19.2.0",
+    "databricks-sdk>=0.144.0",
+    "faker>=40.40.0",
+    "pandas>=2.3.3",
+    "pyyaml>=6.0.3",
+]
+
+[project.scripts]
+mortgage-lakehouse = "mortgage_lakehouse:main"
+
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: needs a Databricks workspace"]
