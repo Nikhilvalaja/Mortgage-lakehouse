@@ -18,7 +18,7 @@ targets:
     default: true
     mode: development
     workspace:
-      host: https://dbc-5bedeafe-82cc.cloud.databricks.com/browse?o=7474653842361991
+      host: https://dbc-5bedeafe-82cc.cloud.databricks.com
     variables:
       env: dev
       catalog: vendor_drop_dev
@@ -26,8 +26,8 @@ targets:
   test:
     mode: production
     workspace:
-      host: https://dbc-5bedeafe-82cc.cloud.databricks.com/browse?o=7474653842361991
-      root_path: /Workspace/Users/valajashekarnikhil12@gmail.com/.bundle/${bundle.name}/test
+      host: https://dbc-5bedeafe-82cc.cloud.databricks.com
+      root_path: /Workspace/Users/nikhilvalaja@gmail.com/.bundle/${bundle.name}/test
     variables:
       env: test
       catalog: vendor_drop_test
@@ -35,8 +35,8 @@ targets:
   prod:
     mode: production
     workspace:
-      host: https://dbc-5bedeafe-82cc.cloud.databricks.com/browse?o=7474653842361991
-      root_path: /Workspace/Users/valajashekarnikhil12@gmail.com/.bundle/${bundle.name}/prod
+      host: https://dbc-5bedeafe-82cc.cloud.databricks.com
+      root_path: /Workspace/Users/nikhilvalaja@gmail.com/.bundle/${bundle.name}/prod
     variables:
       env: prod
       catalog: vendor_drop_prod
