@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    vendor_drop_pipeline:
+      name: vendor_drop_${var.env}
+      catalog: ${var.catalog}
+      schema: bronze
+      serverless: true
+      continuous: false
+      libraries:
+        - file:
+            path: ../../src/vendor_drop/pipeline/bronze.py
+      configuration:
+        vd.catalog: ${var.catalog}
+        vd.env: ${var.env}
