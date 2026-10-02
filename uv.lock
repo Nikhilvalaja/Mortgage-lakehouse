@@ -499,7 +499,7 @@ wheels = [
 [[package]]
 name = "mortgage-lakehouse"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "databricks-connect" },
     { name = "databricks-sdk" },
