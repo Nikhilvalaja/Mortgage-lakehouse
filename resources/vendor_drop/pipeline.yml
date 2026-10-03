@@ -6,6 +6,7 @@ resources:
       schema: bronze
       serverless: true
       continuous: false
+      root_path: ../../src
       libraries:
         - file:
             path: ../../src/vendor_drop/pipeline/bronze.py
